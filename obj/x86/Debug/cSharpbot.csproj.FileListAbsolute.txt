@@ -1,0 +1,5 @@
+C:\Users\Julian\Documents\GitHub\cSharpBot\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Julian\Documents\GitHub\cSharpBot\bin\Debug\cSharpbot.exe
+C:\Users\Julian\Documents\GitHub\cSharpBot\bin\Debug\cSharpbot.pdb
+C:\Users\Julian\Documents\GitHub\cSharpBot\obj\x86\Debug\cSharpbot.exe
+C:\Users\Julian\Documents\GitHub\cSharpBot\obj\x86\Debug\cSharpbot.pdb
