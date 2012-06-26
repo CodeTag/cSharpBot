@@ -13,10 +13,10 @@ namespace cSharpbot
     {
         static void Main(string[] args)
         {
-            new BomberBot();            
+            new BomberBot();
         }
 
-        byte[] inFromServer = new byte[2048];
+        byte[] inFromServer = new byte[1280];
         private Socket socketCliente = null;
         private Bot bot = null;
 
@@ -32,6 +32,7 @@ namespace cSharpbot
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                Console.ReadKey();
             }
         }
 
@@ -52,15 +53,19 @@ namespace cSharpbot
 
         private void controlConexion()
         {
-            byte[] response = new byte[2048];
+            byte[] response = new byte[512];
             while (conectado)
             {
                 Console.WriteLine("turno");
 
                 socketCliente.Receive(response);
-                String mensaje = Encoding.UTF8.GetString(response);
-                string[] serverMessage = Regex.Split(mensaje, "\r\n");
-                string[] message = Regex.Split(serverMessage[0], ";");
+                String serverMessage = Encoding.UTF8.GetString(response);
+                Console.WriteLine(serverMessage);
+                string[] message = Regex.Split(serverMessage, ";");
+
+                if (message.Length == 0)
+                    continue;
+
                 if (message[0] == "EMPEZO")
                 {
                     bot = new Bot(message[2][0]);
