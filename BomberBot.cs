@@ -39,7 +39,7 @@ namespace cSharpbot
         private void conectar(String user, String token)
         {
             socketCliente = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            socketCliente.Connect("localhost", 5000);
+            socketCliente.Connect("bomberbot.com", 5000);
 
             socketCliente.Receive(inFromServer);
             String bienvenida = Encoding.UTF8.GetString(inFromServer);
