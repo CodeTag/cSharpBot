@@ -60,7 +60,7 @@ namespace cSharpbot
 
                 socketCliente.Receive(response);
                 String serverMessage = Encoding.UTF8.GetString(response);
-                Console.WriteLine(serverMessage);
+                
                 string[] message = Regex.Split(serverMessage, ";");
 
                 if (message.Length == 0)
